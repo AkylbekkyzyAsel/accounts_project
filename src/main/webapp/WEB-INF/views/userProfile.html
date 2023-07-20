@@ -1,0 +1,69 @@
+<html  xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" >
+        <link href="/resources/css/profile.css" rel="stylesheet" >
+        <title>Profile</title>
+    </head>
+    <body>
+        <section id="sidebar" >
+            <a href="#" class="panel">
+                <i class='bx bxs-smile'></i>
+                    <span class="text">A-S-E-L</span>
+            </a>
+            <hr>
+            <ul class="side-menu top">
+                <li>
+                    <a th:href="@{/profile}">
+                        <i class='bx bxs-dashboard' ></i>
+                        <span class="text"> Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{/account}">
+                        <i class='bx bxs-shopping-bag-alt' ></i>
+                        <span class="text">Account</span>
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{/transactions}">
+                        <i class='bx bxs-doughnut-chart' ></i>
+                        <span class="text">History of transactions</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="side-menu">
+                <li>
+                    <a th:href="@{/auth/logout}" class="logout">
+                        <i class='bx bxs-log-out-circle' ></i>
+                        <span class="text">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- ------------------------------------------------------------------------------------------------- -->
+        <section id="content">
+            <main>
+                <div class="head-title">
+                    <div class="left">
+                        <p>Profile</p>
+                    </div>
+                    <div class="container d-flex justify-content-center mt-5">
+                        <div class="card">
+                            <div class="top-container">
+                                <div class="ml-3">
+                                    <h5 class="name" th:text="'Id: ' + ${user.getId() }">ID</h5>
+                                    <p class="id" th:text="'Username: ' + ${user.getUsername()}">Username</p>
+                                    <p class="id" th:text="'Fullname: ' + ${user.getFullName()}">Full name</p>
+                                    <p class="id" th:text="'Date of birth: ' + ${user.getDateOfBirth()}">Date of birth</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </section>
+    </body>
+</html>

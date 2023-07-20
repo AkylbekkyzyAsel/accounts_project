@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+:root {
+    --poppins: 'Poppins', sans-serif;
+    --lato: 'Lato', sans-serif;
+
+    --light: #F9F9F9;
+    --blue: #3C91E6;
+    --light-blue: #CFE8FF;
+    --grey: #eee;
+    --dark-grey: #AAAAAA;
+    --dark: #342E37;
+    --red: #DB504A;
+    --yellow: #FFCE26;
+    --light-yellow: #FFF2C6;
+    --orange: #FD7238;
+    --light-orange: #FFE0D3;
+    --pink: #ed56de;
+}
+
+@font-face {
+    font-family:Barbie;
+    src: url(Barbie-font.ttf);
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--light);
+    overflow-x: hidden;
+}
+
+
+/* SIDEBAR */
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100%;
+    background: var(--pink);
+    z-index: 2000;
+    font-family: var(--lato);
+    /*  font-family: Barbie;*/
+    transition: .3s ease;
+    overflow-x: hidden;
+    scrollbar-width: none;
+}
+#sidebar::--webkit-scrollbar {
+    display: none;
+}
+#sidebar.hide {
+    width: 60px;
+}
+
+
+
+#sidebar .panel {
+    font-size: 40px;
+    font-weight: 700;
+    height: 50px;
+    display: inline-block;
+    align-items: center;
+    color: var(--light);
+    position: sticky;
+    top: 15px;
+    left: 50px;
+    /*  background: var(--light);*/
+    z-index: 500;
+    padding-bottom: 20px;
+
+
+    box-sizing: content-box;
+}
+
+/*Panel*/
+/*#sidebar .panel .bx {
+  min-width: 100px;
+  display: flex;
+  justify-content: center;
+}*/
+
+#sidebar .side-menu {
+    width: 100%;
+    margin-top: 48px;
+}
+
+#sidebar .side-menu li {
+    height: 48px;
+    background: transparent;
+    margin-left: 15px;
+    margin-right: 15px;
+    /*  border-radius: 1000px;*/
+    padding: 4px;
+}
+
+#sidebar .side-menu li a {
+    width: 100%;
+    height: 100%;
+    /*  background: var(--light);*/
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: normal;
+    color: var(--light);
+    font-weight: 500;
+    white-space: nowrap;
+    overflow-x: hidden;
+}
+
+#sidebar .side-menu li a:hover {
+    background: var(--light);
+    color: pink;
+}
+
+#sidebar .side-menu li a:visited {
+    background: var(--light);
+}
+
+
+#sidebar .side-menu li a.logout {
+    color: var(--red);
+    position: relative;
+    top: 350px;
+}
+
+#sidebar .side-menu li a .bx {
+    min-width: calc(60px  - ((4px + 6px) * 2));
+    display: flex;
+    justify-content: center;
+}
+/* SIDEBAR */
+
+
+/* CONTENT */
+/*code from tutorial with the default content page, later change with custom profile content*/
+#content {
+    position: relative;
+    width: calc(100% - 280px);
+    /*  width: 50%;*/
+    left: 25%;
+    transition: .3s ease;
+}
+
+.left {
+    font-size: 40px;
+    font-weight: 500;
+    /*  font-family: Barbie;*/
+
+    color: var(--blue);
+    height: 50px;
+    width:20%;
+    display: flex;
+
+    position: relative;
+    top: 15px;
+    right: 7%;
+    padding-bottom: 20px;
+    padding-left: 20px;
+
+}
+
+
+
+/*Profile*/
+
+.card {
+    position: relative;
+    right:10%;
+    /*  top:10px;*/
+    width: 60%;
+    border-radius: 30px;
+    /*  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+    padding: 10rem !important;
+}
+
+.name {
+    font-size: 15px;
+    font-weight: bold;
+    color: #272727;
+    position: relative;
+    top: -100px;
+    left: -100px;
+}
+
+.funds {
+    font-size: 14px;
+    color: grey;
+    position: relative;
+    top: -100px;
+    left: -100px;
+}
+
+.transButton {
+    /*  color: white;
+      background: #56baed;
+      position: relative;
+      top:100px;
+      left: 100px;
+      border: 0;
+      line-height: 3;
+      padding: 0 40px;
+      text-align: center;
+      text-shadow: 1px 1px 1px grey;
+      border-radius: 5px;*/
+    /*  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);*/
+    background-color: #56baed;
+    border: none;
+    color: white;
+    padding: 15px 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 13px;
+    -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+    box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    margin: 5px 20px 40px 20px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+
+
+}
+
+.transButton:hover {
+    background-color: #cc0996;
+}
+
+
+.transButton:active  {
+    -moz-transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+    -o-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+}
+

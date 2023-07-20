@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" >
+  <link href="/resources/css/transaction.css" rel="stylesheet" >
+  <title>Transactions</title>
+</head>
+<body>
+<section id="sidebar" >
+  <a href="#" class="panel">
+    <i class='bx bxs-smile'></i>
+    <span class="text">A-S-E-L</span>
+  </a>
+  <hr>
+  <ul class="side-menu top">
+    <li>
+      <a href="/profile">
+        <i class='bx bxs-dashboard' ></i>
+        <span class="text">Profile</span>
+      </a>
+    </li>
+    <li>
+      <a href="/account">
+        <i class='bx bxs-shopping-bag-alt' ></i>
+        <span class="text">Account</span>
+      </a>
+    </li>
+    <li>
+      <a href="/transactions">
+        <i class='bx bxs-doughnut-chart' ></i>
+        <span class="text">History of transactions</span>
+      </a>
+    </li>
+  </ul>
+  <ul class="side-menu">
+    <li>
+      <a href="/auth/logout" class="logout">
+        <i class='bx bxs-log-out-circle' ></i>
+        <span class="text">Logout</span>
+      </a>
+    </li>
+  </ul>
+</section>
+
+<!-- ------------------------------------------------------------------------------------------------- -->
+<section id="content">
+  <main>
+    <div class="head-title">
+      <div class="left">
+        <p>History of transactions</p>
+      </div>
+      <div class="container d-flex justify-content-center mt-5">
+        <div class="card">
+          <div class="top-container">
+
+            <table>
+              <thead>
+              <tr class="table100-head">
+                <th colspan="2">Transfer by requesite</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td class="column1">transaction ID</td>
+                <td class="column2" th:text="${transaction.getId()}">ID</td>
+              </tr>
+              <tr>
+                <td class="column1">sender account</td>
+                <td class="column2" th:text="${transaction.getSender().getNumber()}">sender account</td>
+              </tr>
+
+              <tr>
+                <td class="column1">receiver account</td>
+                <td class="column2" th:text="${transaction.getReceiver().getNumber()}">receiver account</td>
+              </tr>
+              <tr>
+                <td class="column1">sum</td>
+                <td class="column2" th:text="${transaction.getSum()} + ' ' + ${transaction.getCurrency()}">sum and cureency</td>
+              </tr>
+              <tr>
+                <td class="column1">status</td>
+                <td class="column2" th:text="${transaction.getStatus()}">status</td>
+              </tr>
+              <tr>
+                <td class="column1">date</td>
+                <td class="column2" th:text="${transaction.getDate()}">date</td>
+              </tr>
+
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</section>
+</body>
+</html>
+
+

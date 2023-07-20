@@ -1,0 +1,27 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:tiles="http://www.thymeleaf.org">
+  <head>
+    <title tiles:fragment="title">LOGIN</title>
+    <link href="/resources/css/login.css" rel="stylesheet" >
+  </head>
+  <body>
+    <div class="wrapper fadeInDown">
+      <div id="formContent">
+
+        <h1>Login</h1>
+        <form name="f" th:action="@{/auth/login}" method="post" th:object="${userCred}">
+
+          <div th:if="${#fields.hasErrors('global')}">
+            <p style="color:red" th:each="err : ${#fields.errors('global')}" th:text="${err}" class="error" />
+          </div>
+          <input type="text" id="username" class="fadeIn second" name="username" placeholder="login">
+
+          <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
+
+          <input type="submit" class="fadeIn fourth" value="Log In">
+        </form>
+      </div>
+    </div>
+  </body>
+
+</html>
